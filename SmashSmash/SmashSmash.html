@@ -23,7 +23,7 @@
 
 		#canvas {
 			display: block;
-			margin: 0;
+			margin: 0 auto;
 			color: white;
 		}
 
@@ -189,8 +189,8 @@
                 
                             function adjustCanvasDimensions() {
                                 var scale = window.devicePixelRatio || 1;
-                                var width = window.innerWidth * 0.5;
-                                var height = window.innerHeight * 0.5;
+                                var width = window.innerWidth * 0.75;
+                                var height = window.innerHeight * 0.75;
                                 canvas.width = width * scale;
                                 canvas.height = height * scale;
                                 canvas.style.width = width + "px";
