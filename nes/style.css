@@ -24,6 +24,14 @@ section > .container {
     max-width: 980px;
 }
 
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  flex-grow: 1;
+}
+
 .container {
     margin: auto;
 }
