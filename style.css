@@ -47,6 +47,11 @@ section > .container {
     padding-bottom: 8px;
 }
 
+#resume-link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* Header */
 header {
     padding-top: 8px;
