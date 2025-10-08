@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 .vscode/
 .nvmrc
+
+# Allow committing the built PhaserResume site inside public/PhaserResume/dist
+# (we keep the general `dist/` ignore but explicitly include this one folder)
+!public/PhaserResume/dist/
+!public/PhaserResume/dist/**
