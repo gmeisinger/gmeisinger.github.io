@@ -1,0 +1,19 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # The branch you're deploying from
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install, Build, and Deploy 🚀
+        uses: withastro/action@v1
+        # with:
+        #   node-version: 18 # Specify a Node.js version if necessary
+        #   package-manager: pnpm # Specify a package manager if necessary
