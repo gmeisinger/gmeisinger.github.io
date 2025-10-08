@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Hunter 16</title>
+  <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
+  <style>
+    :root {
+      --background-color: #1a1a2e;
+      --primary-color: #0f3460;
+      --secondary-color: #e94560;
+      --accent-color: #16213e;
+      --font-color: #ffffff;
+      --glow-color: #00ffff;
+    }
+
+    body,
+    code,
+    html,
+    kbd,
+    pre,
+    samp {
+      font-family: "Press Start 2P", cursive;
+    }
+
+    html {
+      cursor: auto;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--font-color);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+      background-size: 100% 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--secondary-color);
+      text-shadow: 0 0 5px var(--secondary-color);
+    }
+
+    a,
+    button {
+      color: var(--font-color);
+      text-shadow: 0 0 5px var(--glow-color);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover,
+    button:hover {
+      color: var(--secondary-color);
+    }
+
+    .container {
+      margin: auto;
+      max-width: 980px;
+      padding: 0 1rem;
+    }
+
+    header {
+      background-color: var(--accent-color);
+      border-bottom: 4px solid var(--primary-color);
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .nav-brand a {
+      color: var(--font-color);
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-item {
+      margin-left: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+    }
+
+    .social-buttons {
+      text-align: right;
+    }
+
+    .social-buttons p {
+      margin-bottom: 0.5rem;
+    }
+
+    .nes-icon.github.is-dark {
+      filter: invert(1);
+    }
+
+    main.container {
+      background-color: var(--accent-color);
+      padding: 2rem;
+      border: 4px solid var(--primary-color);
+    }
+
+    .page-footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    section {
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+
+    .project-page {
+      max-width: 90%;
+      margin: auto;
+    }
+
+    .card {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      justify-content: center;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 234px;
+      object-fit: contain;
+      padding-bottom: 8px;
+    }
+
+    #resume-link,
+    #interactive-resume-link {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .portfolio-block {
+      padding-top: 100px;
+    }
+
+    .portfolio-block.block-intro {
+      text-align: center;
+    }
+
+    .intro-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+      background-size: 100% 4px;
+      background-color: var(--background-color);
+    }
+
+    /* responsive game container */
+    .game_container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 62.5%;
+      height: 0;
+      margin: 0 auto;
+    }
+
+    .game_container canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav-brand">
+        <a href="/index.html">
+          <h1><img src="" /></h1>_George Meisinger
+        </a>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resume.html">Resume</a>
+        </li>
+      </ul>
+      <div class="social-buttons">
+        <p>Follow Me</p>
+        <div class="share">
+          <a href="https://github.com/gmeisinger" target="_blank"><i class="nes-icon github is-dark"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="page">
+    <main class="container">
+      <div class="portfolio-block">
+        <h1> HUNTER 16</h1>
+      </div>
+      <div class="game_container">
+        <canvas id='canvas'>
+          HTML5 canvas appears to be unsupported in the current browser.
+          Please try updating or use a different browser.
+        </canvas>
+        <div id='status'>
+          <div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'>
+            <div id='status-progress-inner'></div>
+          </div>
+          <div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div id='status-notice' class='godot' style='display: none;'></div>
+        </div>
+
+        <script type='text/javascript' src='Hunter16_Game.js'></script>
+        <script type='text/javascript'>
+          //<![CDATA[
+
+          var engine = new Engine;
+          var setStatusMode;
+          var setStatusNotice;
+
+          (function () {
+
+            const EXECUTABLE_NAME = 'Hunter16_Game';
+            const MAIN_PACK = 'Hunter16_Game.pck';
+            const INDETERMINATE_STATUS_STEP_MS = 100;
+
+            var canvas = document.getElementById('canvas');
+            var statusProgress = document.getElementById('status-progress');
+            var statusProgressInner = document.getElementById('status-progress-inner');
+            var statusIndeterminate = document.getElementById('status-indeterminate');
+            var statusNotice = document.getElementById('status-notice');
+
+            var initializing = true;
+            var statusMode = 'hidden';
+
+            var animationCallbacks = [];
+
+            function animate(time) {
+              animationCallbacks.forEach(callback => callback(time));
+              requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+
+            function adjustCanvasDimensions() {
+              var scale = window.devicePixelRatio || 1;
+              var wrapper = document.querySelector('.game_container');
+              var rect = wrapper ? wrapper.getBoundingClientRect() : null;
+              var width = rect && rect.width ? rect.width : window.innerWidth * 0.75;
+              var height = rect && rect.height ? rect.height : window.innerHeight * 0.75;
+              canvas.width = Math.max(1, Math.floor(width * scale));
+              canvas.height = Math.max(1, Math.floor(height * scale));
+              canvas.style.width = width + "px";
+              canvas.style.height = height + "px";
+            }
+            window.addEventListener('resize', adjustCanvasDimensions);
+            animationCallbacks.push(adjustCanvasDimensions);
+            adjustCanvasDimensions();
+
+            setStatusMode = function setStatusMode(mode) {
+
+              if (statusMode === mode || !initializing)
+                return;
+              [statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+                elem.style.display = 'none';
+              });
+              animationCallbacks = animationCallbacks.filter(function (value) {
+                return (value != animateStatusIndeterminate);
+              });
+              switch (mode) {
+                case 'progress':
+                  statusProgress.style.display = 'block';
+                  break;
+                case 'indeterminate':
+                  statusIndeterminate.style.display = 'block';
+                  animationCallbacks.push(animateStatusIndeterminate);
+                  break;
+                case 'notice':
+                  statusNotice.style.display = 'block';
+                  break;
+                case 'hidden':
+                  break;
+                default:
+                  throw new Error('Invalid status mode');
+              }
+              statusMode = mode;
+            }
+
+            function animateStatusIndeterminate(ms) {
+
+              var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+              if (statusIndeterminate.children[i].style.borderTopColor == '') {
+                Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+                  child.style.borderTopColor = '';
+                });
+                statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+              }
+            }
+
+            setStatusNotice = function setStatusNotice(text) {
+
+              while (statusNotice.lastChild) {
+                statusNotice.removeChild(statusNotice.lastChild);
+              }
+              var lines = text.split('\n');
+              lines.forEach((line) => {
+                statusNotice.appendChild(document.createTextNode(line));
+                statusNotice.appendChild(document.createElement('br'));
+              });
+            };
+
+            engine.setProgressFunc((current, total) => {
+
+              if (total > 0) {
+                statusProgressInner.style.width = current / total * 100 + '%';
+                setStatusMode('progress');
+                if (current === total) {
+                  // wait for progress bar animation
+                  setTimeout(() => {
+                    setStatusMode('indeterminate');
+                  }, 500);
+                }
+              } else {
+                setStatusMode('indeterminate');
+              }
+            });
+
+            function displayFailureNotice(err) {
+              var msg = err.message || err;
+              console.error(msg);
+              setStatusNotice(msg);
+              setStatusMode('notice');
+              initializing = false;
+            };
+
+            if (!Engine.isWebGLAvailable()) {
+              displayFailureNotice('WebGL not available');
+            } else {
+              setStatusMode('indeterminate');
+              engine.setCanvas(canvas);
+              engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+                setStatusMode('hidden');
+                initializing = false;
+              }, displayFailureNotice);
+            }
+          })();
+          //]]>
+        </script>
+      </div>
+      </section>
+      <!--End Game-->
+      <div style="padding-top: 40px;"></div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12" style="padding-bottom: 20px;">
+          <div class="nes-container with-title is-centered is-dark is-rounded intro-box"
+            style="max-width: 500px; margin: auto;">
+            <p class="title">How to play</p>
+            <p>Move with W/S/A/D</p>
+            <p>Jump with Space</p>
+            <p>Shoot your bow with mouse or touch</p>
+            <p>Hunt the rare legendary birds!</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="nes-container with-title is-centered is-dark is-rounded intro-box"
+            style="max-width: 800px; margin: auto;">
+            <p class="title">About this game</p>
+            <p>Created with Godot engine as a solo project.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="page-footer" style="text-align: center;">
+    <div class="container">
+      <p>George Meisinger 2020</p>
+    </div>
+  </footer>
+</body>
+
+</html>
