@@ -69,6 +69,7 @@ const { title } = Astro.props;
     --accent-color: #16213e;
     --font-color: #ffffff;
     --glow-color: #00ffff;
+    --card-height: 340px; /* default consistent card height */
   }
 
   body,
@@ -226,7 +227,7 @@ const { title } = Astro.props;
   }
 
   section {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 10px;
   }
 
@@ -249,11 +250,49 @@ const { title } = Astro.props;
     border: 2px solid rgba(255, 255, 255, 0.04);
     background-color: rgba(255, 255, 255, 0.02);
     overflow: hidden;
+    /* make cards uniform size */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: var(--card-height);
   }
 
   .card-body {
     text-align: center;
-    padding-top: 16px;
+    padding: 16px;
+    /* let body grow/shrink to fill the card space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  /* Make headings take only their needed space and allow the description to use the remaining area */
+  .card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.15;
+    /* allow wrapping for titles (no truncation) */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+    flex: 0 0 auto;
+  }
+
+  /* Clamp descriptions to a few lines with an ellipsis (CSS-only) */
+  .card-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* show up to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 1 auto;
   }
 
   .card-img-top {
@@ -267,6 +306,21 @@ const { title } = Astro.props;
     background: #000; /* prevents flash for transparent images */
     /* keep a little spacing inside the card for small captions */
     box-sizing: border-box;
+  }
+
+  /* Make cards collapse to natural height on small screens so content doesn't get clipped */
+  @media (max-width: 600px) {
+    :root {
+      --card-height: auto;
+    }
+
+    .card {
+      height: auto;
+    }
+
+    .card-img-top {
+      height: 160px;
+    }
   }
 
   /* Slight image scale when the card is hovered */
@@ -311,9 +365,9 @@ const { title } = Astro.props;
     margin: 20px auto;
   }
 
-  .portfolio-block {
-    padding-top: 100px;
-  }
+  /* .portfolio-block {
+    padding-top: 40px;
+  } */
 
   .portfolio-block.block-intro {
     text-align: center;
