@@ -7,13 +7,18 @@ import Layout from "../layouts/Layout.astro";
     <section class="portfolio-block block-intro" style="padding-bottom: 20px;">
       <div class="container">
         <img src="/img/player_idle.gif" class="img-rounded" />
-        <div class="nes-container is-dark intro-box" style="max-width: 980px;">
-          <p>
-            Hello! I'm <strong>George Meisinger</strong>. I am a software
-            designer and developer. I have a passion for video games, pixel art
-            and music!
-          </p>
-          <p>Check out my games and projects below!</p>
+        <div class="terminal-block intro-box" style="max-width: 980px;">
+          <div class="terminal-block-header">
+            <span class="prompt-symbol">$</span> cat about.txt
+          </div>
+          <div class="terminal-block-body">
+            <p>
+              Hello! I'm <strong>George Meisinger</strong>. I am a software
+              designer and developer. I have a passion for video games, pixel art
+              and music!
+            </p>
+            <p>Check out my games and projects below!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -37,11 +42,19 @@ import Layout from "../layouts/Layout.astro";
       <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">walljumper.p8</span>
+            </div>
             <a href="/projects/walljumper">
               <img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/walljumper.p8.png"
-                alt="Card Image"
+                alt="Walljumper screenshot"
               /></a
             >
             <div class="card-body">
@@ -52,11 +65,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">psychedelic_jam.sh</span>
+            </div>
             <a href="/projects/psychedelicjam"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/psychedelic.png"
-                alt="Card Image"
+                alt="Psychedelic Jam screenshot"
               /></a
             >
             <div class="card-body">
@@ -71,11 +92,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">resume_v3.js</span>
+            </div>
             <a href="/projects/resume"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/resume_logo.png"
-                alt="Card Image"
+                alt="Interactive Resume screenshot"
               /></a
             >
             <div class="card-body">
@@ -90,11 +119,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">dad_broke_moon.bin</span>
+            </div>
             <a href="/projects/dadbrokethemoon"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/dadbrokethemoon.png"
-                alt="Card Image"
+                alt="Dad Broke The Moon screenshot"
               /></a
             >
             <div class="card-body">
@@ -110,11 +147,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">hunter16.rom</span>
+            </div>
             <a href="/projects/hunter16">
               <img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/title_image3.png"
-                alt="Card Image"
+                alt="Hunter 16 screenshot"
               />
             </a>
             <div class="card-body">
@@ -127,11 +172,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">lyre_of_truth.dat</span>
+            </div>
             <a href="/projects/lyreoftruth"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/lyre_of_truth_itch_cover.gif"
-                alt="Card Image"
+                alt="The Lyre of Truth screenshot"
               /></a
             >
             <div class="card-body">
@@ -139,19 +192,26 @@ import Layout from "../layouts/Layout.astro";
                 <a href="/projects/lyreoftruth">The Lyre of Truth</a>
               </h4>
               <p class="text-muted card-text">
-                Entry for Community Game Jam 2019. Theme: "The game is a liar".<br
-                />
+                Entry for Community Game Jam 2019. Theme: "The game is a liar".
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">smash_smash.exe</span>
+            </div>
             <a href="/projects/smashsmash"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/SMASHSMASH_title.gif"
-                alt="Card Image"
+                alt="Smash Smash screenshot"
               /></a
             >
             <div class="card-body">
@@ -165,11 +225,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">we_lost_jason.sh</span>
+            </div>
             <a href="/projects/welostjason"
               ><img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/cover.png"
-                alt="Card Image"
+                alt="We Lost Jason screenshot"
               /></a
             >
             <div class="card-body">
@@ -178,18 +246,26 @@ import Layout from "../layouts/Layout.astro";
               </h4>
               <p class="text-muted card-text">
                 Entry for The Maturity Explained J-Horror Jam 2019. Find your
-                friend Jason in this spooky adventure!<br />
+                friend Jason in this spooky adventure!
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">strange_patterns.gd</span>
+            </div>
             <a href="/projects/strangepatterns">
               <img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/StrangePatterns.png"
-                alt="Card Image"
+                alt="Strange Patterns screenshot"
               />
             </a>
             <div class="card-body">
@@ -204,10 +280,18 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">scitalk.py</span>
+            </div>
             <img
               class="card-img-top scale-on-hover"
               src="/img/covers/scitalk.png"
-              alt="Card Image"
+              alt="SCITalk screenshot"
             />
             <div class="card-body">
               <h4>SCITalk</h4>
@@ -219,11 +303,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="card">
+            <div class="card-titlebar">
+              <span class="titlebar-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </span>
+              <span class="titlebar-text">derelict.wip</span>
+            </div>
             <a href="/projects/derelict">
               <img
                 class="card-img-top scale-on-hover"
                 src="/img/covers/derelict.png"
-                alt="Card Image"
+                alt="Derelict screenshot"
               />
             </a>
             <div class="card-body">

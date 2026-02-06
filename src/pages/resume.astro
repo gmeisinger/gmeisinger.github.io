@@ -3,17 +3,21 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="George Meisinger - Resume">
-  <div
-    class="nes-container is-centered is-dark is-rounded intro-box"
-    id="resume-link"
-  >
-    <a href="/RESUME.pdf">Download the PDF</a>
+  <div class="terminal-block" id="resume-link">
+    <div class="terminal-block-header">
+      <span class="prompt-symbol">$</span> download resume.pdf
+    </div>
+    <div class="terminal-block-body" style="text-align: center;">
+      <a href="/RESUME.pdf">Download the PDF</a>
+    </div>
   </div>
 
-  <div
-    class="nes-container is-centered is-dark is-rounded intro-box"
-    id="interactive-resume-link"
-  >
-    <a href="/projects/resume">Interactive Resume (JavaScript)</a>
+  <div class="terminal-block" id="interactive-resume-link">
+    <div class="terminal-block-header">
+      <span class="prompt-symbol">$</span> run resume --interactive
+    </div>
+    <div class="terminal-block-body" style="text-align: center;">
+      <a href="/projects/resume">Interactive Resume (JavaScript)</a>
+    </div>
   </div>
 </Layout>
